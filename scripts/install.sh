@@ -6,9 +6,8 @@ set -e
 # Fix root directory.
 cd "$(dirname $(readlink -f "${BASH_SOURCE[0]}"))/.."
 
-
-NAME="sfera"
-VENV=".env"
+# Import constants.
+. scripts/constants.sh
 
 
 main() {
@@ -41,7 +40,7 @@ create-virtual-environment() {
     python3 -m venv "$VENV" --prompt="$NAME"
 
     # Install requirements.
-    "$VENV/bin/pip" install -U pip
+    "$VENV/bin/pip" install -U pip build
     "$VENV/bin/pip" install -r requirements.txt
 
     # Make package importable from anywhere.
