@@ -40,7 +40,7 @@ create-virtual-environment() {
     python3 -m venv "$VENV" --prompt="$NAME"
 
     # Install requirements.
-    "$VENV/bin/pip" install -U pip build
+    "$VENV/bin/pip" install -U pip build pytest
     "$VENV/bin/pip" install -r requirements.txt
 
     # Make package importable from anywhere.
