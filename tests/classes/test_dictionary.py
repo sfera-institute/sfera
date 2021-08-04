@@ -11,7 +11,7 @@ def d():
 def test_getattr(d):
     assert d.x == 1
     assert d.y == 2
-    with pytest.raises(AttributeError):
+    with pytest.raises(AttributeError, match='z'):
         d.z
 
 
@@ -26,7 +26,7 @@ def test_delattr(d):
     assert 'x' in d
     del d.x
     assert 'x' not in d
-    with pytest.raises(AttributeError):
+    with pytest.raises(AttributeError, match='z'):
         del d.z
-    with pytest.raises(AttributeError):
+    with pytest.raises(AttributeError, match='x'):
         del d.x

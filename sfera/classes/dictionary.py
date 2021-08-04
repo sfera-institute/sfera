@@ -1,16 +1,15 @@
+from ..functions.replaceerror import replace_error
+
+
 class Dictionary(dict):
 
     def __getattr__(self, key):
-        try:
+        with replace_error(KeyError, AttributeError):
             return self[key]
-        except KeyError as error:
-            raise AttributeError(*error.args)
     
     def __setattr__(self, key, value):
         self[key] = value
     
     def __delattr__(self, key):
-        try:
+        with replace_error(KeyError, AttributeError):
             del self[key]
-        except KeyError as error:
-            raise AttributeError(*error.args)
