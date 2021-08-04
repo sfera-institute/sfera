@@ -44,7 +44,7 @@ command resolves to whatever Python distribution you want to install SFERA in):
 
 - [Auto-Import](docs/autoimport.md)
 
-  A mechanism that automatically collects and exposes SFERA's public AP
+  A mechanism that automatically collects and exposes SFERA's public API.
 
 - [Classes](docs/classes.md)
 
