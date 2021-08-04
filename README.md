@@ -31,3 +31,25 @@ command resolves to whatever Python distribution you want to install SFERA in):
 /home/user/sfera$ python
 >>> import sfera # Ta-da!
 ```
+
+## Usage
+
+```python
+>>> import sfera
+>>> sfera.version
+'0.1.0'
+```
+
+## Reference
+
+- [Auto-Import](docs/autoimport.md)
+
+  A mechanism that automatically collects and exposes SFERA's public AP
+
+- [Classes](docs/classes.md)
+
+  A collection of useful classes.
+
+- [Functions](docs/functions.md)
+
+  A collection of useful functions.
